@@ -89,10 +89,11 @@ packages:
   flutter_bluetooth_printer_platform_interface:
     dependency: "direct main"
     description:
-      name: flutter_bluetooth_printer_platform_interface
-      sha256: fb61723299979245bf34528dbe2a970707b93f9a3f479d65b2ad3df0cbbd3b96
-      url: "https://pub.dev"
-    source: hosted
+      path: "packages/flutter_bluetooth_printer_platform_interface"
+      ref: billz_printing
+      resolved-ref: "3d79a929e76f28e5a709d552bb637b458338f73c"
+      url: "https://github.com/Bahrom2101/flutter_bluetooth_printer_plugin.git"
+    source: git
     version: "0.0.4"
   flutter_lints:
     dependency: "direct dev"

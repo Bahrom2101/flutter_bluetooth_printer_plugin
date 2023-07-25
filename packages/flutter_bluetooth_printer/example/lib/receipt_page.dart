@@ -192,7 +192,7 @@ class _ReceiptPageState extends State<ReceiptPage> {
                               print('type: ${e.type}');
                               print('name: ${e.name}');
                               print('address: ${e.address}');
-                              print('address: ${e.classType}');
+                              print('classType: ${e.classType}');
                             }
                           },
                         );
