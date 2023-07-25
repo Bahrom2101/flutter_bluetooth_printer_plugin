@@ -185,6 +185,18 @@ class _ReceiptPageState extends State<ReceiptPage> {
                   Expanded(
                     child: ElevatedButton(
                       onPressed: () async {
+                        FlutterBluetoothPrinter.discovery.listen(
+                          (event) {
+                            for (var e in (event as DiscoveryResult).devices) {
+                              print('my log: loop');
+                              print('type: ${e.type}');
+                              print('name: ${e.name}');
+                              print('address: ${e.address}');
+                              print('address: ${e.classType}');
+                            }
+                          },
+                        );
+                        return;
                         final selectedAddress = address ??
                             (await FlutterBluetoothPrinter.selectDevice(
                                     context))
@@ -214,6 +226,7 @@ class _ReceiptPageState extends State<ReceiptPage> {
 class PrintingProgressDialog extends StatefulWidget {
   final String device;
   final ReceiptController controller;
+
   const PrintingProgressDialog({
     Key? key,
     required this.device,
@@ -222,6 +235,7 @@ class PrintingProgressDialog extends StatefulWidget {
 
   @override
   State<PrintingProgressDialog> createState() => _PrintingProgressDialogState();
+
   static void print(
     BuildContext context, {
     required String device,
@@ -240,6 +254,7 @@ class PrintingProgressDialog extends StatefulWidget {
 
 class _PrintingProgressDialogState extends State<PrintingProgressDialog> {
   double? progress;
+
   @override
   void initState() {
     super.initState();
