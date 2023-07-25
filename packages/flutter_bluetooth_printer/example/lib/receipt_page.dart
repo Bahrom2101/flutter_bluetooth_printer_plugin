@@ -193,6 +193,7 @@ class _ReceiptPageState extends State<ReceiptPage> {
                               print('name: ${e.name}');
                               print('address: ${e.address}');
                               print('classType: ${e.classType}');
+                              print('bondState: ${e.bondState}');
                             }
                           },
                         );

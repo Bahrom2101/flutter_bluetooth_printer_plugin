@@ -56,12 +56,14 @@ class BluetoothDevice extends DiscoveryState {
   final String? name;
   final int? type;
   final String? classType;
+  final int? bondState;
 
   BluetoothDevice({
     required this.address,
     this.name,
     this.type,
     this.classType,
+    this.bondState,
   });
 
   @override

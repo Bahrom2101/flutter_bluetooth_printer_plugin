@@ -106,6 +106,7 @@ public class FlutterBluetoothPrinterPlugin implements FlutterPlugin, ActivityAwa
     private Map<String, Object> deviceToMap(BluetoothDevice device) {
         final HashMap<String, Object> map = new HashMap<>();
         map.put("code", 4);
+        map.put("bond_state", device.getBondState());
         map.put("name", device.getName());
         map.put("address", device.getAddress());
         map.put("type", device.getType());
