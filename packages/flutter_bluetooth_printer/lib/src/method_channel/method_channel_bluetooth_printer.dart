@@ -115,7 +115,6 @@ class _MethodChannelBluetoothPrinter extends FlutterBluetoothPrinterPlatform {
     bool keepConnected = false,
     ProgressCallback? onProgress,
   }) async {
-    try {
       if (_isBusy) {
         throw busyDeviceException;
       }
@@ -138,10 +137,7 @@ class _MethodChannelBluetoothPrinter extends FlutterBluetoothPrinterPlatform {
       });
 
       _progressCallback = null;
-    } finally {
-      _isBusy = false;
-      throw busyDeviceException;
-    }
+
   }
 
   @override
