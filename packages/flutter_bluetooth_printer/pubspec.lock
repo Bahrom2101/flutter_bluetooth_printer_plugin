@@ -91,7 +91,7 @@ packages:
     description:
       path: "packages/flutter_bluetooth_printer_platform_interface"
       ref: billz_printing
-      resolved-ref: "3d79a929e76f28e5a709d552bb637b458338f73c"
+      resolved-ref: "663910a1855ce75a0b63ea165936afb236a93ba7"
       url: "https://github.com/Bahrom2101/flutter_bluetooth_printer_plugin.git"
     source: git
     version: "0.0.4"
