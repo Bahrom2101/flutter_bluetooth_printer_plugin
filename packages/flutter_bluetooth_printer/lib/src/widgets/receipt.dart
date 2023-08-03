@@ -18,7 +18,9 @@ class ReceiptController with ChangeNotifier {
   final ReceiptState _state;
 
   PaperSize _paperSize = PaperSize.mm58;
+
   PaperSize get paperSize => _paperSize;
+
   set paperSize(PaperSize size) {
     _paperSize = size;
     notifyListeners();
@@ -52,6 +54,7 @@ class Receipt extends StatefulWidget {
   final Color backgroundColor;
   final TextStyle? defaultTextStyle;
   final void Function(ReceiptController controller) onInitialized;
+  final BorderRadius? borderRadius;
 
   const Receipt({
     Key? key,
@@ -59,6 +62,7 @@ class Receipt extends StatefulWidget {
     this.backgroundColor = Colors.grey,
     required this.builder,
     required this.onInitialized,
+    this.borderRadius,
   }) : super(key: key);
 
   @override
@@ -99,7 +103,11 @@ class ReceiptState extends State<Receipt> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: widget.backgroundColor,
+      decoration: BoxDecoration(
+        color: widget.backgroundColor,
+        shape: BoxShape.rectangle,
+        borderRadius: widget.borderRadius,
+      ),
       child: ClipRect(
         clipBehavior: Clip.hardEdge,
         child: Container(

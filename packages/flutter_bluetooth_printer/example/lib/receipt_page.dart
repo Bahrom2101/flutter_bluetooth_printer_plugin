@@ -32,193 +32,199 @@ class _ReceiptPageState extends State<ReceiptPage> {
           ),
         ],
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Expanded(
-            child: Receipt(
-              backgroundColor: Colors.grey.shade200,
-              builder: (context) {
-                return Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Image.asset(
-                      'assets/logo.webp',
-                      fit: BoxFit.fitHeight,
-                      height: 200,
-                    ),
-                    ConstrainedBox(
-                      constraints: const BoxConstraints(
-                        maxHeight: 36,
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            SizedBox(
+              height: MediaQuery.sizeOf(context).height * 0.6,
+              width: MediaQuery.sizeOf(context).width - 40,
+              child: Receipt(
+                borderRadius: BorderRadius.circular(8),
+                backgroundColor: Colors.grey.shade200,
+                builder: (context) {
+                  return Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Image.asset(
+                        'assets/logo.webp',
+                        fit: BoxFit.fitHeight,
+                        height: 200,
                       ),
-                      child: const FittedBox(
-                        fit: BoxFit.contain,
-                        child: Text(
-                          'PURCHASE RECEIPT',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
+                      ConstrainedBox(
+                        constraints: const BoxConstraints(
+                          maxHeight: 36,
+                        ),
+                        child: const FittedBox(
+                          fit: BoxFit.contain,
+                          child: Text(
+                            'PURCHASE RECEIPT',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                    const Divider(thickness: 2),
-                    Table(
-                      columnWidths: const {
-                        1: IntrinsicColumnWidth(),
-                      },
-                      children: const [
-                        TableRow(
-                          children: [
-                            Text('ORANGE JUICE'),
-                            Text(r'$2'),
-                          ],
-                        ),
-                        TableRow(
-                          children: [
-                            Text('CAPPUCINO MEDIUM SIZE'),
-                            Text(r'$2.9'),
-                          ],
-                        ),
-                        TableRow(
-                          children: [
-                            Text('BEEF PIZZA'),
-                            Text(r'$15.9'),
-                          ],
-                        ),
-                        TableRow(
-                          children: [
-                            Text('ORANGE JUICE'),
-                            Text(r'$2'),
-                          ],
-                        ),
-                        TableRow(
-                          children: [
-                            Text('CAPPUCINO MEDIUM SIZE'),
-                            Text(r'$2.9'),
-                          ],
-                        ),
-                        TableRow(
-                          children: [
-                            Text('BEEF PIZZA'),
-                            Text(r'$15.9'),
-                          ],
-                        ),
-                      ],
-                    ),
-                    const Divider(thickness: 2),
-                    FittedBox(
-                      fit: BoxFit.cover,
-                      child: Row(
+                      const Divider(thickness: 2),
+                      Table(
+                        columnWidths: const {
+                          1: IntrinsicColumnWidth(),
+                        },
                         children: const [
-                          Text(
-                            'TOTAL',
-                            style: TextStyle(
-                              fontWeight: FontWeight.w900,
-                            ),
+                          TableRow(
+                            children: [
+                              Text('ORANGE JUICE'),
+                              Text(r'$2'),
+                            ],
                           ),
-                          SizedBox(width: 16),
-                          Text(
-                            r'$200',
-                            style: TextStyle(
-                              fontWeight: FontWeight.w900,
-                            ),
+                          TableRow(
+                            children: [
+                              Text('CAPPUCINO MEDIUM SIZE'),
+                              Text(r'$2.9'),
+                            ],
+                          ),
+                          TableRow(
+                            children: [
+                              Text('BEEF PIZZA'),
+                              Text(r'$15.9'),
+                            ],
+                          ),
+                          TableRow(
+                            children: [
+                              Text('ORANGE JUICE'),
+                              Text(r'$2'),
+                            ],
+                          ),
+                          TableRow(
+                            children: [
+                              Text('CAPPUCINO MEDIUM SIZE'),
+                              Text(r'$2.9'),
+                            ],
+                          ),
+                          TableRow(
+                            children: [
+                              Text('BEEF PIZZA'),
+                              Text(r'$15.9'),
+                            ],
                           ),
                         ],
                       ),
+                      const Divider(thickness: 2),
+                      const FittedBox(
+                        fit: BoxFit.cover,
+                        child: Row(
+                          children: [
+                            Text(
+                              'TOTAL',
+                              style: TextStyle(
+                                fontWeight: FontWeight.w900,
+                              ),
+                            ),
+                            SizedBox(width: 16),
+                            Text(
+                              r'$200',
+                              style: TextStyle(
+                                fontWeight: FontWeight.w900,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const Divider(thickness: 2),
+                      const Text('Thank you for your purchase!'),
+                      const SizedBox(height: 24),
+                      Center(
+                        child: Image.asset(
+                          'assets/qrcode.png',
+                          width: 150,
+                        ),
+                      ),
+                    ],
+                  );
+                },
+                onInitialized: (controller) {
+                  setState(() {
+                    this.controller = controller;
+                  });
+                },
+              ),
+            ),
+            SafeArea(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(12.0),
+                      decoration: BoxDecoration(
+                        border: Border.all(),
+                        borderRadius: BorderRadius.circular(100),
+                      ),
+                      child: PopupMenuButton<PaperSize>(
+                        initialValue: controller?.paperSize,
+                        itemBuilder: (context) => [
+                          const PopupMenuItem(
+                            child: Text('58mm'),
+                            value: PaperSize.mm58,
+                          ),
+                          const PopupMenuItem(
+                            child: Text('72mm'),
+                            value: PaperSize.mm72,
+                          ),
+                          const PopupMenuItem(
+                            child: Text('80mm'),
+                            value: PaperSize.mm80,
+                          ),
+                        ],
+                        onSelected: (value) {
+                          setState(() {
+                            controller?.paperSize = value;
+                          });
+                        },
+                        child: Text(controller?.paperSize.name ?? ''),
+                      ),
                     ),
-                    const Divider(thickness: 2),
-                    const Text('Thank you for your purchase!'),
-                    const SizedBox(height: 24),
-                    Center(
-                      child: Image.asset(
-                        'assets/qrcode.png',
-                        width: 150,
+                    const SizedBox(width: 8),
+                    Expanded(
+                      child: ElevatedButton(
+                        onPressed: () async {
+                          FlutterBluetoothPrinter.discovery.listen(
+                            (event) {
+                              for (var e in (event as DiscoveryResult).devices) {
+                                print('my log: loop');
+                                print('type: ${e.type}');
+                                print('name: ${e.name}');
+                                print('address: ${e.address}');
+                                print('classType: ${e.classType}');
+                                print('bondState: ${e.bondState}');
+                              }
+                            },
+                          );
+                          return;
+                          final selectedAddress = address ??
+                              (await FlutterBluetoothPrinter.selectDevice(
+                                      context))
+                                  ?.address;
+
+                          if (selectedAddress != null) {
+                            PrintingProgressDialog.print(
+                              context,
+                              device: selectedAddress,
+                              controller: controller!,
+                            );
+                          }
+                        },
+                        child: const Text('PRINT'),
                       ),
                     ),
                   ],
-                );
-              },
-              onInitialized: (controller) {
-                setState(() {
-                  this.controller = controller;
-                });
-              },
-            ),
-          ),
-          SafeArea(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                children: [
-                  Container(
-                    padding: const EdgeInsets.all(12.0),
-                    decoration: BoxDecoration(
-                      border: Border.all(),
-                      borderRadius: BorderRadius.circular(100),
-                    ),
-                    child: PopupMenuButton<PaperSize>(
-                      initialValue: controller?.paperSize,
-                      itemBuilder: (context) => [
-                        const PopupMenuItem(
-                          child: Text('58mm'),
-                          value: PaperSize.mm58,
-                        ),
-                        const PopupMenuItem(
-                          child: Text('72mm'),
-                          value: PaperSize.mm72,
-                        ),
-                        const PopupMenuItem(
-                          child: Text('80mm'),
-                          value: PaperSize.mm80,
-                        ),
-                      ],
-                      onSelected: (value) {
-                        setState(() {
-                          controller?.paperSize = value;
-                        });
-                      },
-                      child: Text(controller?.paperSize.name ?? ''),
-                    ),
-                  ),
-                  const SizedBox(width: 8),
-                  Expanded(
-                    child: ElevatedButton(
-                      onPressed: () async {
-                        FlutterBluetoothPrinter.discovery.listen(
-                          (event) {
-                            for (var e in (event as DiscoveryResult).devices) {
-                              print('my log: loop');
-                              print('type: ${e.type}');
-                              print('name: ${e.name}');
-                              print('address: ${e.address}');
-                              print('classType: ${e.classType}');
-                              print('bondState: ${e.bondState}');
-                            }
-                          },
-                        );
-                        return;
-                        final selectedAddress = address ??
-                            (await FlutterBluetoothPrinter.selectDevice(
-                                    context))
-                                ?.address;
-
-                        if (selectedAddress != null) {
-                          PrintingProgressDialog.print(
-                            context,
-                            device: selectedAddress,
-                            controller: controller!,
-                          );
-                        }
-                      },
-                      child: const Text('PRINT'),
-                    ),
-                  ),
-                ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
