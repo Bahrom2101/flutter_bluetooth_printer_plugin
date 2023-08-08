@@ -91,7 +91,7 @@ packages:
     description:
       path: "packages/flutter_bluetooth_printer_platform_interface"
       ref: billz_printing
-      resolved-ref: "663910a1855ce75a0b63ea165936afb236a93ba7"
+      resolved-ref: e4cf982c180d91c2eb7e8cb3a19be60f26c3ca80
       url: "https://github.com/Bahrom2101/flutter_bluetooth_printer_plugin.git"
     source: git
     version: "0.0.4"
@@ -192,10 +192,10 @@ packages:
     dependency: "direct main"
     description:
       name: plugin_platform_interface
-      sha256: "075f927ebbab4262ace8d0b283929ac5410c0ac4e7fc123c76429564facfb757"
+      sha256: "43798d895c929056255600343db8f049921cbec94d31ec87f1dc5c16c01935dd"
       url: "https://pub.dev"
     source: hosted
-    version: "2.1.2"
+    version: "2.1.5"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -274,5 +274,4 @@ packages:
     source: hosted
     version: "6.1.0"
 sdks:
-  dart: ">=3.0.0-0 <4.0.0"
-  flutter: ">=1.17.0"
+  dart: ">=3.0.0 <4.0.0"
