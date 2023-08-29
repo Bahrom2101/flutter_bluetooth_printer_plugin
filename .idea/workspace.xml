@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c7e0f3f2-3cf8-4981-8914-3670aeb14b8f" name="Changes" comment="some fixes" />
+    <list default="true" id="c7e0f3f2-3cf8-4981-8914-3670aeb14b8f" name="Changes" comment="some fixes">
+      <change beforePath="$PROJECT_DIR$/packages/flutter_bluetooth_printer/lib/src/flutter_bluetooth_printer_impl.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/flutter_bluetooth_printer/lib/src/flutter_bluetooth_printer_impl.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/flutter_bluetooth_printer/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/packages/flutter_bluetooth_printer/pubspec.yaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,8 +72,25 @@
       <option name="project" value="LOCAL" />
       <updated>1693306545604</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="some fixes">
+      <created>1693306770165</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1693306770165</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
