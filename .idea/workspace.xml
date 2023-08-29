@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c7e0f3f2-3cf8-4981-8914-3670aeb14b8f" name="Changes" comment="dependencies upgraded">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/flutter_bluetooth_printer/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/packages/flutter_bluetooth_printer/example/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/flutter_bluetooth_printer/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/packages/flutter_bluetooth_printer/pubspec.lock" afterDir="false" />
+    <list default="true" id="c7e0f3f2-3cf8-4981-8914-3670aeb14b8f" name="Changes" comment="some changes">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/flutter_bluetooth_printer/lib/src/flutter_bluetooth_printer_impl.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/flutter_bluetooth_printer/lib/src/flutter_bluetooth_printer_impl.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +58,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691477766028</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="some changes">
+      <created>1693304857870</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1693304857870</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -79,6 +81,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="dependencies upgraded" />
-    <option name="LAST_COMMIT_MESSAGE" value="dependencies upgraded" />
+    <MESSAGE value="some changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="some changes" />
   </component>
 </project>

@@ -58,7 +58,7 @@ class FlutterBluetoothPrinter {
   }) async {
     final bytes = await _optimizeImage(
       paperSize: paperSize,
-      src: imageBytes,
+      src: Uint8List.fromList(imageBytes),
       srcWidth: imageWidth,
       srcHeight: imageHeight,
     );
