@@ -4,19 +4,23 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c7e0f3f2-3cf8-4981-8914-3670aeb14b8f" name="Changes" comment="some fixes">
-      <change beforePath="$PROJECT_DIR$/packages/flutter_bluetooth_printer/lib/src/flutter_bluetooth_printer_impl.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/flutter_bluetooth_printer/lib/src/flutter_bluetooth_printer_impl.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/flutter_bluetooth_printer/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/packages/flutter_bluetooth_printer/pubspec.yaml" afterDir="false" />
+    <list default="true" id="c7e0f3f2-3cf8-4981-8914-3670aeb14b8f" name="Changes" comment="upgrading">
+      <change beforePath="$PROJECT_DIR$/packages/flutter_bluetooth_printer/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/packages/flutter_bluetooth_printer/example/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/flutter_bluetooth_printer/lib/src/widgets/receipt.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/flutter_bluetooth_printer/lib/src/widgets/receipt.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/flutter_bluetooth_printer/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/packages/flutter_bluetooth_printer/pubspec.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="billz_printing_1" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />

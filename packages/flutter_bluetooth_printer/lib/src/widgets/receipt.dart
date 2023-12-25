@@ -47,6 +47,10 @@ class ReceiptController with ChangeNotifier {
       keepConnected: keepConnected,
     );
   }
+
+  Future<Uint8List> getFile() {
+    return _state.getFile();
+  }
 }
 
 class Receipt extends StatefulWidget {
@@ -176,5 +180,14 @@ class ReceiptState extends State<Receipt> {
       useImageRaster: useImageRaster,
       keepConnected: keepConnected,
     );
+  }
+
+  Future<Uint8List> getFile() async {
+    int quality = 4;
+    final RenderRepaintBoundary boundary =
+        _localKey.currentContext!.findRenderObject() as RenderRepaintBoundary;
+    final image = await boundary.toImage(pixelRatio: quality.toDouble());
+    final byteData = await image.toByteData(format: ImageByteFormat.rawRgba);
+    return byteData!.buffer.asUint8List();
   }
 }
