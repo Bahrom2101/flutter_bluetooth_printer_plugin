@@ -48,8 +48,8 @@ class ReceiptController with ChangeNotifier {
     );
   }
 
-  Future<Uint8List> getFile() {
-    return _state.getFile();
+  Future<Uint8List> getFilePng() {
+    return _state.getFilePng();
   }
 }
 
@@ -182,12 +182,12 @@ class ReceiptState extends State<Receipt> {
     );
   }
 
-  Future<Uint8List> getFile() async {
+  Future<Uint8List> getFilePng() async {
     int quality = 4;
     final RenderRepaintBoundary boundary =
         _localKey.currentContext!.findRenderObject() as RenderRepaintBoundary;
     final image = await boundary.toImage(pixelRatio: quality.toDouble());
-    final byteData = await image.toByteData(format: ImageByteFormat.rawRgba);
+    final byteData = await image.toByteData(format: ImageByteFormat.png);
     return byteData!.buffer.asUint8List();
   }
 }
