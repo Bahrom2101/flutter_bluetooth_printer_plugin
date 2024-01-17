@@ -55,6 +55,7 @@ class FlutterBluetoothPrinter {
     int addFeeds = 0,
     bool useImageRaster = false,
     required bool keepConnected,
+    bool cut = false,
   }) async {
     final bytes = await _optimizeImage(
       paperSize: paperSize,
@@ -96,6 +97,8 @@ class FlutterBluetoothPrinter {
         ...imageData,
         ...generator.reset(),
         ...additional,
+        if(cut)
+        ...generator.cut(),
       ]),
       onProgress: onProgress,
     );
