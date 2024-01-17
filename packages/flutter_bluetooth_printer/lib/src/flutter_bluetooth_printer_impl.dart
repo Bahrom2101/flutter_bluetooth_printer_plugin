@@ -2,6 +2,7 @@ part of flutter_bluetooth_printer;
 
 class DiscoveryResult extends DiscoveryState {
   final List<BluetoothDevice> devices;
+
   DiscoveryResult({required this.devices});
 }
 
@@ -87,6 +88,7 @@ class FlutterBluetoothPrinter {
     final additional = [
       ...generator.emptyLines(addFeeds),
       ...generator.text('.'),
+      if (cut) ...generator.cut(),
     ];
 
     return printBytes(
@@ -97,8 +99,6 @@ class FlutterBluetoothPrinter {
         ...imageData,
         ...generator.reset(),
         ...additional,
-        if(cut)
-        ...generator.cut(),
       ]),
       onProgress: onProgress,
     );
