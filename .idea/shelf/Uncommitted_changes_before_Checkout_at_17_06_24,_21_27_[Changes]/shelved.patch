@@ -1,0 +1,119 @@
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+new file mode 100644
+--- /dev/null	(date 1718641637440)
++++ b/.idea/misc.xml	(date 1718641637440)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectType">
++    <option name="id" value="io.flutter" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	(date 1718641637441)
++++ b/.idea/vcs.xml	(date 1718641637441)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/material_theme_project_new.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/material_theme_project_new.xml b/.idea/material_theme_project_new.xml
+new file mode 100644
+--- /dev/null	(date 1718641615955)
++++ b/.idea/material_theme_project_new.xml	(date 1718641615955)
+@@ -0,0 +1,13 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="MaterialThemeProjectNewConfig">
++    <option name="metadata">
++      <MTProjectMetadataState>
++        <option name="migrated" value="true" />
++        <option name="pristineConfig" value="false" />
++        <option name="userId" value="-683e604:18b529e640c:-8000" />
++        <option name="version" value="8.13.2" />
++      </MTProjectMetadataState>
++    </option>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/libraries/Flutter_Plugins.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/libraries/Flutter_Plugins.xml b/.idea/libraries/Flutter_Plugins.xml
+new file mode 100644
+--- /dev/null	(date 1718641615953)
++++ b/.idea/libraries/Flutter_Plugins.xml	(date 1718641615953)
+@@ -0,0 +1,10 @@
++<component name="libraryTable">
++  <library name="Flutter Plugins" type="FlutterPluginsLibraryType">
++    <CLASSES>
++      <root url="file://$PROJECT_DIR$/packages/flutter_bluetooth_printer_macos" />
++      <root url="file://$PROJECT_DIR$/packages/flutter_bluetooth_printer" />
++    </CLASSES>
++    <JAVADOC />
++    <SOURCES />
++  </library>
++</component>
+\ No newline at end of file
+Index: .idea/libraries/Dart_SDK.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/libraries/Dart_SDK.xml b/.idea/libraries/Dart_SDK.xml
+new file mode 100644
+--- /dev/null	(date 1718641615953)
++++ b/.idea/libraries/Dart_SDK.xml	(date 1718641615953)
+@@ -0,0 +1,29 @@
++<component name="libraryTable">
++  <library name="Dart SDK">
++    <CLASSES>
++      <root url="file://$USER_HOME$/flutter/bin/cache/dart-sdk/lib/async" />
++      <root url="file://$USER_HOME$/flutter/bin/cache/dart-sdk/lib/cli" />
++      <root url="file://$USER_HOME$/flutter/bin/cache/dart-sdk/lib/collection" />
++      <root url="file://$USER_HOME$/flutter/bin/cache/dart-sdk/lib/convert" />
++      <root url="file://$USER_HOME$/flutter/bin/cache/dart-sdk/lib/core" />
++      <root url="file://$USER_HOME$/flutter/bin/cache/dart-sdk/lib/developer" />
++      <root url="file://$USER_HOME$/flutter/bin/cache/dart-sdk/lib/ffi" />
++      <root url="file://$USER_HOME$/flutter/bin/cache/dart-sdk/lib/html" />
++      <root url="file://$USER_HOME$/flutter/bin/cache/dart-sdk/lib/indexed_db" />
++      <root url="file://$USER_HOME$/flutter/bin/cache/dart-sdk/lib/io" />
++      <root url="file://$USER_HOME$/flutter/bin/cache/dart-sdk/lib/isolate" />
++      <root url="file://$USER_HOME$/flutter/bin/cache/dart-sdk/lib/js" />
++      <root url="file://$USER_HOME$/flutter/bin/cache/dart-sdk/lib/js_interop" />
++      <root url="file://$USER_HOME$/flutter/bin/cache/dart-sdk/lib/js_interop_unsafe" />
++      <root url="file://$USER_HOME$/flutter/bin/cache/dart-sdk/lib/js_util" />
++      <root url="file://$USER_HOME$/flutter/bin/cache/dart-sdk/lib/math" />
++      <root url="file://$USER_HOME$/flutter/bin/cache/dart-sdk/lib/mirrors" />
++      <root url="file://$USER_HOME$/flutter/bin/cache/dart-sdk/lib/svg" />
++      <root url="file://$USER_HOME$/flutter/bin/cache/dart-sdk/lib/typed_data" />
++      <root url="file://$USER_HOME$/flutter/bin/cache/dart-sdk/lib/web_audio" />
++      <root url="file://$USER_HOME$/flutter/bin/cache/dart-sdk/lib/web_gl" />
++    </CLASSES>
++    <JAVADOC />
++    <SOURCES />
++  </library>
++</component>
+\ No newline at end of file
