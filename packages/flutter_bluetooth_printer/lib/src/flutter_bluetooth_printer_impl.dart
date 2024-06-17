@@ -2,16 +2,19 @@ part of flutter_bluetooth_printer;
 
 class DiscoveryResult extends DiscoveryState {
   final List<BluetoothDevice> devices;
+
   DiscoveryResult({required this.devices});
 }
 
 enum PaperSize {
   // original is 384 => 48 * 8
-  mm58(360, 58, 'Roll Paper 58mm');
+  mm58(360, 58, 'Roll Paper 58mm'),
+  mm80(360, 80, 'Roll Paper 58mm');
 
   final int width;
   final double paperWidthMM;
   final String name;
+
   const PaperSize(
     this.width,
     this.paperWidthMM,

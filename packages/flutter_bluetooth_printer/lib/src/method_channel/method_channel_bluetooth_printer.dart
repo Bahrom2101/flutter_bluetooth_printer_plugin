@@ -97,6 +97,7 @@ class MethodChannelBluetoothPrinter extends FlutterBluetoothPrinterPlatform {
             address: data['address'],
             name: data['name'],
             type: data['type'],
+            classType: data['class_type'],
           );
         }
 

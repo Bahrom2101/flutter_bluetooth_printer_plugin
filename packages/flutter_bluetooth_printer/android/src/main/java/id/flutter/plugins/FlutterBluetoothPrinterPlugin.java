@@ -37,6 +37,8 @@ import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
 import io.flutter.plugin.common.PluginRegistry;
+import android.bluetooth.BluetoothClass;
+import java.util.Arrays;
 
 public class FlutterBluetoothPrinterPlugin implements FlutterPlugin, ActivityAware, MethodCallHandler, PluginRegistry.RequestPermissionsResultListener, EventChannel.StreamHandler {
     private final Map<Object, EventChannel.EventSink> sinkList = new HashMap<>();
@@ -111,7 +113,36 @@ public class FlutterBluetoothPrinterPlugin implements FlutterPlugin, ActivityAwa
         map.put("name", device.getName());
         map.put("address", device.getAddress());
         map.put("type", device.getType());
+        map.put("class_type", getBTMajorDeviceClass(device.getBluetoothClass().getMajorDeviceClass()));
         return map;
+    }
+    private String getBTMajorDeviceClass(int major) {
+        switch (major) {
+            case BluetoothClass.Device.Major.AUDIO_VIDEO:
+                return "AUDIO_VIDEO";
+            case BluetoothClass.Device.Major.COMPUTER:
+                return "COMPUTER";
+            case BluetoothClass.Device.Major.HEALTH:
+                return "HEALTH";
+            case BluetoothClass.Device.Major.IMAGING:
+                return "IMAGING";
+            case BluetoothClass.Device.Major.MISC:
+                return "MISC";
+            case BluetoothClass.Device.Major.NETWORKING:
+                return "NETWORKING";
+            case BluetoothClass.Device.Major.PERIPHERAL:
+                return "PERIPHERAL";
+            case BluetoothClass.Device.Major.PHONE:
+                return "PHONE";
+            case BluetoothClass.Device.Major.TOY:
+                return "TOY";
+            case BluetoothClass.Device.Major.UNCATEGORIZED:
+                return "UNCATEGORIZED";
+            case BluetoothClass.Device.Major.WEARABLE:
+                return "WEARABLE";
+            default:
+                return "unknown!";
+        }
     }
 
     private boolean ensurePermission(boolean request) {
