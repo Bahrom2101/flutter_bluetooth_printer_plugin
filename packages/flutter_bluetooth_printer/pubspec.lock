@@ -79,7 +79,7 @@ packages:
     source: sdk
     version: "0.0.0"
   flutter_bluetooth_printer_macos:
-    dependency: "direct main"
+    dependency: "direct overridden"
     description:
       path: "../flutter_bluetooth_printer_macos"
       relative: true
