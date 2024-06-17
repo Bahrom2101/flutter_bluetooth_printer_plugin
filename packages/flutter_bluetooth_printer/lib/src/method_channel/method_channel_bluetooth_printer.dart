@@ -8,7 +8,11 @@ class BluetoothDisabledState extends DiscoveryState {}
 
 class BluetoothEnabledState extends DiscoveryState {}
 
-class _MethodChannelBluetoothPrinter extends FlutterBluetoothPrinterPlatform {
+class MethodChannelBluetoothPrinter extends FlutterBluetoothPrinterPlatform {
+  static void registerWith() {
+    FlutterBluetoothPrinterPlatform.instance = MethodChannelBluetoothPrinter();
+  }
+
   final channel = const MethodChannel('maseka.dev/flutter_bluetooth_printer');
   final discoveryChannel =
       const EventChannel('maseka.dev/flutter_bluetooth_printer/discovery');
@@ -107,10 +111,12 @@ class _MethodChannelBluetoothPrinter extends FlutterBluetoothPrinterPlatform {
   bool _isBusy = false;
 
   @override
-  Future<void> write({
+  Future<bool> write({
     required String address,
     required Uint8List data,
     bool keepConnected = false,
+    required int maxBufferSize,
+    required int delayTime,
     ProgressCallback? onProgress,
   }) async {
     try {
@@ -121,21 +127,23 @@ class _MethodChannelBluetoothPrinter extends FlutterBluetoothPrinterPlatform {
       _isBusy = true;
       _init();
 
-      // ensure device is available
-      await discovery
-          .firstWhere((element) =>
-              element is BluetoothDevice && element.address == address)
-          .timeout(const Duration(seconds: 10));
-
       _progressCallback = onProgress;
-
-      await channel.invokeMethod('write', {
+      final res = await channel.invokeMethod('write', {
         'address': address,
         'data': data,
         'keep_connected': keepConnected,
+        'delay_time': delayTime,
+        'max_buffer_size': maxBufferSize,
       });
 
       _progressCallback = null;
+      if (res is bool) {
+        return res;
+      }
+
+      return false;
+    } catch (e) {
+      return false;
     } finally {
       _isBusy = false;
     }
@@ -152,5 +160,39 @@ class _MethodChannelBluetoothPrinter extends FlutterBluetoothPrinterPlatform {
     }
 
     return false;
+  }
+
+  @override
+  Future<bool> connect(String address) async {
+    try {
+      _isBusy = true;
+      _init();
+
+      await discovery
+          .firstWhere((element) =>
+              element is BluetoothDevice && element.address == address)
+          .timeout(const Duration(seconds: 10));
+
+      final res = await channel.invokeMethod('connect', {
+        'address': address,
+      });
+
+      if (res is bool) {
+        return res;
+      }
+
+      return false;
+    } catch (e) {
+      return false;
+    } finally {
+      _isBusy = false;
+    }
+  }
+
+  @override
+  Future<BluetoothState> checkState() async {
+    final result = await channel.invokeMethod('getState');
+    final state = _intToState(result);
+    return state;
   }
 }

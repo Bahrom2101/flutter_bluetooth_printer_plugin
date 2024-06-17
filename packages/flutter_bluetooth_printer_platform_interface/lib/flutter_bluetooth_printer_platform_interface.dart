@@ -41,14 +41,18 @@ abstract class FlutterBluetoothPrinterPlatform extends PlatformInterface {
 
   Stream<DiscoveryState> get discovery;
 
-  Future<void> write({
+  Future<bool> write({
     required String address,
     required Uint8List data,
     bool keepConnected = false,
+    required int maxBufferSize,
+    required int delayTime,
     ProgressCallback? onProgress,
   });
 
+  Future<bool> connect(String address);
   Future<bool> disconnect(String address);
+  Future<BluetoothState> checkState();
 }
 
 class BluetoothDevice extends DiscoveryState {
